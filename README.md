@@ -5,6 +5,33 @@
 This project explores and validates key concepts in the time and frequency domains through hands-on signal processing techniques. It demonstrates waveform synthesis, spectral analysis... .
 
 ## Mathematical Background
+### Fourier Transform
+
+The **Fourier Transform** is a mathematical tool that transforms a signal from the time domain into the frequency domain. It decomposes a function into a sum (or integral) of sinusoids, making it easier to analyze the signal's frequency components.
+
+For a continuous-time signal $x(t)$, the Fourier Transform is defined as:
+
+$$
+X(f) = \int_{-\infty}^{\infty} x(t) \cdot e^{-j 2\pi f t} \, dt
+$$
+
+The inverse Fourier Transform recovers the time-domain signal:
+
+$$
+x(t) = \int_{-\infty}^{\infty} X(f) \cdot e^{j 2\pi f t} \, df
+$$
+
+For discrete-time signals, we use the **Discrete Fourier Transform (DFT)**:
+
+$$
+X[k] = \sum_{n=0}^{N-1} x[n] \cdot e^{-j \frac{2\pi kn}{N}}
+$$
+
+$$
+x[n] = \frac{1}{N} \sum_{k=0}^{N-1} X[k] \cdot e^{j \frac{2\pi kn}{N}}
+$$
+
+The DFT is often computed using the **Fast Fourier Transform (FFT)** algorithm for efficiency.
 
 ### Time-Domain Convolution
 
